@@ -17,8 +17,7 @@ event = {
 
 def test_function_01():
     try:
-        logging.info('key1:', event['key1'])
-        assert True
+        assert event['key1'] == 'value1'
     except KeyError as e:
         logging.error(e)
         assert False
@@ -26,8 +25,7 @@ def test_function_01():
 
 def test_function_02():
     try:
-        logging.info('key2:', event['key2'])
-        assert True
+        assert event['key2'] == 'value2'
     except KeyError as e:
         logging.error(e)
         assert False
@@ -35,8 +33,7 @@ def test_function_02():
 
 def test_function_03():
     try:
-        logging.info('key3:', event['key3'])
-        assert True
+        assert event['key3'] == 'value3'
     except KeyError as e:
         logging.error(e)
         assert False
@@ -44,8 +41,7 @@ def test_function_03():
 
 def test_function_04():
     try:
-        logging.info('key4:', event['key4'])
-        assert True
+        assert event['key4'] == 'value4'
     except KeyError as e:
         logging.error(e)
         assert False
@@ -53,8 +49,7 @@ def test_function_04():
 
 def test_function_05():
     try:
-        logging.info('key5:', event['key5'])
-        assert True
+        assert event['key5'] == 'value5'
     except KeyError as e:
         logging.error(e)
         assert False
@@ -62,8 +57,7 @@ def test_function_05():
 
 def test_function_06():
     try:
-        logging.info('key6:', event['key6'])
-        assert True
+        assert event['key6'] == 'value6'
     except KeyError as e:
         logging.error(e)
         assert False
@@ -71,8 +65,7 @@ def test_function_06():
 
 def test_function_07():
     try:
-        logging.info('key7:', event['key7'])
-        assert True
+        assert event['key7'] == 'value7'
     except KeyError as e:
         logging.error(e)
         assert False
@@ -80,8 +73,7 @@ def test_function_07():
 
 def test_function_08():
     try:
-        logging.info('key8:', event['key8'])
-        assert True
+        assert event['key8'] == 'value8'
     except KeyError as e:
         logging.error(e)
         assert False
@@ -89,8 +81,7 @@ def test_function_08():
 
 def test_function_09():
     try:
-        logging.info('key9:', event['key9'])
-        assert True
+        assert event['key9'] == 'value9'
     except KeyError as e:
         logging.error(e)
         assert False
@@ -98,8 +89,7 @@ def test_function_09():
 
 def test_function_10():
     try:
-        logging.info('key10:', event['key10'])
-        assert True
+        assert event['key10'] == 'value10'
     except KeyError as e:
         logging.error(e)
         assert False
