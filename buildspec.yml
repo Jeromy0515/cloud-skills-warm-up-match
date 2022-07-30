@@ -1,0 +1,32 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - pip3 install pytest
+
+  pre_build:
+    commands:
+      - pytest --junit-xml ./junit.xml
+
+  build:
+    commands:
+      - sam build
+      - sam package --s3-bucket wsi-abcd-101-cfn-build --output-template-file Outputtemplate.yml
+
+  post_build:
+    commands:
+#      - sam deploy -t Outputtemplate.yml --stack-name wsi-stack --region ap-northeast-2 --capabilities CAPABILITY_IAM --s3-bucket wsi-abcd-101-cfn-build --no-fail-on-empty-changeset
+      - cat ./.aws-sam/build/template.yaml
+      - cat Outputtemplate.yml
+
+reports:
+  arn:aws:codebuild:$AWS_REGION:$ACCOUNT_ID:report-group/wsi-report-group:
+    files:
+      - ./junit.xml
+
+artifacts:
+  files:
+    - Outputtemplate.yml
